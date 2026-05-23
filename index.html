@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Kỉ niệm lớp 6A1 (2025-2026)🥰🥰🥰</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial;
+    perspective: 1200px;
+
+    background: url("https://i.pinimg.com/736x/05/e2/33/05e233b96feb467a0a288c9baf5b95eb.jpg") no-repeat center/cover;
+}
+
+/* 📖 wrapper để lật */
+.page {
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transition: transform 0.8s ease;
+}
+
+.page.flip {
+    transform: rotateY(-90deg);
+}
+
+/* 📦 CENTER */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    gap: 120px;
+}
+
+/* ☁️ MÂY */
+.cloud-btn {
+    position: relative;
+    width: 420px;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud-btn::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 200px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    filter: blur(12px);
+}
+
+.cloud-btn::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 140px;
+    top: -40px;
+    left: 60px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.cloud-btn span {
+    position: absolute;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    filter: blur(8px);
+}
+
+.cloud-btn span:nth-child(1){width:120px;height:80px;top:-30px;left:30px;}
+.cloud-btn span:nth-child(2){width:140px;height:90px;top:-20px;right:40px;}
+.cloud-btn span:nth-child(3){width:100px;height:70px;bottom:-20px;left:80px;}
+
+/* 🌈 BUTTON */
+button {
+    width: 70%;
+    height: 65%;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4656,
+        #ff8b16,
+        #ffee00,
+        #47ff54,
+        #43e0ff,
+        #3758ff,
+        #c743ff,
+        #ff69b9
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+
+    z-index: 3;
+    cursor: pointer;
+}
+
+@keyframes gradientMove {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page" id="page">
+
+<div class="container">
+
+    <div class="cloud-btn">
+        <span></span><span></span><span></span>
+        <button onclick="flipAndGo('home1.html')">Kỉ niệm ngoài giờ học</button>
+    </div>
+
+    <div class="cloud-btn">
+        <span></span><span></span><span></span>
+        <button onclick="flipAndGo('home2.html')">Học sinh và GVCN</button>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function flipAndGo(link){
+    const page = document.getElementById("page");
+    page.classList.add("flip");
+
+    setTimeout(()=>{
+        window.location.href = link;
+    },700);
+}
+
+</script>
+
+</body>
+</html>

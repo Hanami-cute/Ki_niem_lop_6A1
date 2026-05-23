@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Album Kỉ niệm ngoài giờ🏫</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    min-height:100vh;
+    padding:40px;
+
+    background:
+    linear-gradient(rgba(255,255,255,0.08),rgba(255,255,255,0.08)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuIwlMHzyz3_i3dXsdPR7yqgPM3ITpkfSMzg&s");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* 🔙 NÚT BACK */
+.back-btn{
+
+    position:fixed;
+
+    bottom:20px;
+    right:20px;
+
+    padding:10px 18px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #e311ff,
+        #2f71ff,
+        #2eed4b,
+        #ffdb25,
+        #ff2f5f
+    );
+
+    background-size:400% 400%;
+
+    animation:rainbowFlow 6s ease infinite;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.25);
+
+    z-index:999;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 12px rgba(255,255,255,0.9),
+    0 0 25px rgba(255,120,220,0.6);
+}
+
+/* 🌈 CHUYỂN MÀU MƯỢT */
+@keyframes rainbowFlow{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* 🌸 GRID */
+.container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+/* 📦 BOX */
+.memory-box{
+
+    position:relative;
+
+    background:rgba(255,255,255,0.9);
+
+    border:3px solid rgba(255,255,255,0.95);
+
+    border-radius:35px;
+
+    padding:35px;
+
+    min-height:520px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 💌 KHUNG KỈ NIỆM */
+.memory-note{
+
+    grid-column:1/-1;
+
+    position:relative;
+
+    background:rgba(255,255,255,0.88);
+
+    border:3px solid rgba(255,255,255,0.95);
+
+    border-radius:28px;
+
+    padding:38px;
+
+    margin-top:10px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 22px rgba(0,0,0,0.16);
+
+    backdrop-filter:blur(5px);
+
+    max-width:1150px;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* ✨ GÓC */
+.note-corner{
+
+    position:absolute;
+
+    width:38px;
+    height:38px;
+
+    border-color:#999;
+    border-style:solid;
+}
+
+.note-corner.top-left{
+
+    top:16px;
+    left:16px;
+
+    border-width:4px 0 0 4px;
+}
+
+.note-corner.top-right{
+
+    top:16px;
+    right:16px;
+
+    border-width:4px 4px 0 0;
+}
+
+.note-corner.bottom-left{
+
+    bottom:16px;
+    left:16px;
+
+    border-width:0 0 4px 4px;
+}
+
+.note-corner.bottom-right{
+
+    bottom:16px;
+    right:16px;
+
+    border-width:0 4px 4px 0;
+}
+
+/* 📝 TITLE */
+.memory-note h2{
+
+    color:#001f73;
+
+    font-size:36px;
+
+    line-height:1.25;
+
+    margin-bottom:28px;
+
+    text-decoration:underline;
+
+    font-family:Georgia,serif;
+
+    font-weight:bold;
+}
+
+/* 📖 TEXT */
+.memory-note p{
+
+    font-size:24px;
+
+    line-height:1.45;
+
+    color:#000;
+
+    font-family:Georgia,serif;
+}
+
+/* 📱 MOBILE */
+@media(max-width:1100px){
+
+    .memory-note{
+
+        padding:28px 20px;
+
+        max-width:100%;
+    }
+
+    .memory-note h2{
+
+        font-size:27px;
+
+        margin-bottom:22px;
+    }
+
+    .memory-note p{
+
+        font-size:19px;
+    }
+
+    .note-corner{
+
+        width:28px;
+        height:28px;
+    }
+}
+
+.note-content p{
+    margin-bottom:18px;
+}
+
+/* ✨ GÓC */
+.corner{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-color:#999;
+    border-style:solid;
+}
+
+.top-left{
+    top:14px;
+    left:14px;
+    border-width:4px 0 0 4px;
+}
+
+.top-right{
+    top:14px;
+    right:14px;
+    border-width:4px 4px 0 0;
+}
+
+.bottom-left{
+    bottom:14px;
+    left:14px;
+    border-width:0 0 4px 4px;
+}
+
+.bottom-right{
+    bottom:14px;
+    right:14px;
+    border-width:0 4px 4px 0;
+}
+
+/* 📝 TITLE */
+.title{
+    text-align:center;
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:45px;
+}
+
+/* 🎨 MÀU */
+.green{ color:#0f9f2d; }
+.blue{ color:#1571c9; }
+.red{ color:#ff2b2b; }
+.purple{ color:#7c4dff; }
+.pink{ color:#ff1493; }
+.neo{ color:#ff6b00; }
+
+/* 🎞️ SLIDER */
+.slider{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:18px;
+}
+
+/* ⬅️➡️ */
+.arrow{
+
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    font-size:28px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff6ec7,
+        #6ec5ff,
+        #7dff90,
+        #ffe66e
+    );
+
+    background-size:300% 300%;
+
+    animation:rainbowMove 5s ease infinite;
+
+    transition:0.25s;
+}
+
+.arrow:hover{
+
+    transform:scale(1.15) rotate(8deg);
+
+    box-shadow:
+    0 0 12px rgba(255,255,255,0.9),
+    0 0 25px rgba(255,120,220,0.6);
+}
+
+/* 🌈 */
+@keyframes rainbowMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* 🖼️ MEDIA */
+.media-frame{
+
+    width:430px;
+    height:270px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:#eee;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.2);
+
+    position:relative;
+}
+
+/* ✨ HIỆU ỨNG CHUYỂN */
+.media-frame img,
+.media-frame video{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    animation:fadeSlide 0.45s ease;
+}
+
+@keyframes fadeSlide{
+
+    0%{
+        opacity:0;
+        transform:scale(1.03);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* 📱 MOBILE */
+@media(max-width:1100px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .media-frame{
+        width:100%;
+        height:240px;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .back-btn{
+        font-size:14px;
+        padding:9px 15px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔙 BACK -->
+<a href="index.html" class="back-btn">
+⬅ Trang chủ
+</a>
+
+<div class="container">
+
+<!-- 🎒 ĐẦU NĂM HỌC -->
+<div class="memory-box" id="dauNamHoc">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title" style="color:#ff5fa2;">
+Đầu năm học
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('dauNamHoc')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Đầu năm học/1.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('dauNamHoc')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🌿 QUẢNG NINH -->
+<div class="memory-box" id="gate">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title green">
+Đi chơi ở Quảng Ninh Gate
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('gate')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Quảng Ninh Gate/17.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('gate')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🏛️ ĐỀN THỜ -->
+<div class="memory-box" id="denTho">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title blue">
+Đi chơi ở Đền thờ thầy Chu Văn An
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('denTho')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Đền thờ C.V.An/1.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('denTho')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🎉 ĐẠI HỘI -->
+<div class="memory-box" id="daiHoi">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title red">
+Tổ chức đại hội chi đội (2025 - 2026)
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('daiHoi')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Đại hội chi đội/1.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('daiHoi')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 💜 20/10 -->
+<div class="memory-box" id="october20">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title purple">
+Chúc mừng 20/10
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('october20')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/20-10/1.mp4s">
+</div>
+
+<button class="arrow" onclick="nextMedia('october20')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🌸 20/11 -->
+<div class="memory-box" id="november20">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title pink">
+Chúc mừng 20/11
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('november20')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/20-11/4.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('november20')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🎄 NOEL -->
+<div class="memory-box" id="noel">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title neo">
+Chúc mừng Noel
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('noel')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Noel/8.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('noel')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 📘 KẾT THÚC HKI -->
+<div class="memory-box" id="hocKi1">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title blue">
+Kết thúc Học kì I
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('hocKi1')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/End HKI/10.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('hocKi1')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🧧 DỊP TẾT -->
+<div class="memory-box" id="tet">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title red">
+Dịp Tết
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('tet')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Tết/9.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('tet')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🏃 HỘI THI THỂ THAO -->
+<div class="memory-box" id="theThao">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title" style="color:#c58b00;">
+Hội thi thể thao
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('theThao')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/thể thao/15.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('theThao')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🏕️ LÀNG VĂN HOÁ -->
+<div class="memory-box" id="langVanHoa">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title" style="color:#f07b22;">
+Đi chơi ở làng văn hoá 54 dân tộc
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('langVanHoa')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/54 dân tộc/1.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('langVanHoa')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🌊 KHOANG XANH -->
+<div class="memory-box" id="khoangXanh">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title blue">
+Đi chơi ở Khoang Xanh
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('khoangXanh')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Khoang Xanh/9.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('khoangXanh')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🎤 VĂN NGHỆ -->
+<div class="memory-box" id="vanNghe">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title" style="color:#f07b22;">
+Văn nghệ (chúc mừng 30/4)
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('vanNghe')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Văn Nghệ/3.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('vanNghe')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 🎓 CUỐI NĂM HỌC -->
+<div class="memory-box" id="cuoiNamHoc">
+
+<div class="corner top-left"></div>
+<div class="corner top-right"></div>
+<div class="corner bottom-left"></div>
+<div class="corner bottom-right"></div>
+
+<div class="title" style="color:#ff7b54;">
+Cuối năm học
+</div>
+
+<div class="slider">
+
+<button class="arrow" onclick="prevMedia('cuoiNamHoc')">❮</button>
+
+<div class="media-frame">
+<img src="./ảnh, video/Cuối năm học/1.jpg">
+</div>
+
+<button class="arrow" onclick="nextMedia('cuoiNamHoc')">❯</button>
+
+</div>
+
+</div>
+
+<!-- 💌 KỈ NIỆM NHỎ -->
+<div class="memory-note">
+
+<div class="note-corner top-left"></div>
+<div class="note-corner top-right"></div>
+<div class="note-corner bottom-left"></div>
+<div class="note-corner bottom-right"></div>
+
+<h2>
+Ngoài những kỉ niệm đó thì chúng ta còn những kỉ niệm nho nhỏ khác nữa:
+</h2>
+
+<p>
+
+- Đi hái xoài rụng đầy sân xong đc ăn xoài tươi, sạch
+<br><br>
+
+- Xem trộm thầy cô vào buổi trưa bằng TV (lúc thì phim ma lúc thì Short hài)
+<br><br>
+
+- Mấy lần cả lớp đùa nghịch trước giờ học như là nói chuyện, nhảy nhót đùa nghịch, ...
+<br><br>
+
+- Mấy lần chuyền thư nói chuyện mà không bị phát hiện 
+(nhưng có bị phát hiện thì cũng đã thành 1 phần kí ức)
+<br><br>
+
+- Mấy lần trao đổi với nhau trong giờ mà vẫn không bị phát hiện
+<br><br>
+
+- Mấy lần trêu đùa nhau ở mọi thời gian :)
+<br><br>
+
+- Mấy lần cô Hà mắng xong một phát hết tiết hay mấy lần cô Hà cướp tiết GDĐP để dạy Toán
+<br><br>
+
+- Những vụ drama tình yêu hay đánh nhau cũng đã in vào 1 phần ký ức
+<br><br>
+
+- Những hoạt động giải trí vào những giờ phút cuối năm học
+<br><br>
+</p>
+
+</div>
+
+</div>
+
+<!-- 🎵 NHẠC -->
+<audio id="bgMusic" autoplay loop>
+<source src="./Nhạc/Ai Đưa Em Về.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* 🎵 NHẠC */
+window.addEventListener("DOMContentLoaded",function(){
+
+const music=document.getElementById("bgMusic");
+
+music.volume=0.15;
+
+const playPromise=music.play();
+
+if(playPromise!==undefined){
+
+playPromise.catch(()=>{
+
+document.addEventListener("click",function(){
+
+music.play();
+
+},{once:true});
+
+});
+
+}
+
+});
+
+/* 🎞️ MEDIA LIST */
+const galleries = {
+
+dauNamHoc:[
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/Đầu năm học/1.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/2.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/3.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/4.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/5.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/6.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/7.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/8.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/9.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/10.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/11.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/12.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/13.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/14.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/15.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/16.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/17.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/18.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/19.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/20.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/21.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/22.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/23.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/24.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/25.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/26.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/27.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/28.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/29.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/30.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/31.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/32.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/33.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/34.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/35.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/36.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/37.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/38.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/39.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/40.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/41.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/42.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/43.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/44.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/45.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/46.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/47.jpg"},
+    {type:"img",src:"./ảnh, video/Đầu năm học/48.jpg"},
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/Đầu năm học/49.mp4"},
+    {type:"video",src:"./ảnh, video/Đầu năm học/50.mp4"}
+
+],
+
+gate:[
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/Quảng Ninh Gate/19.mp4"},
+    {type:"video",src:"./ảnh, video/Quảng Ninh Gate/20.mp4"},
+    {type:"video",src:"./ảnh, video/Quảng Ninh Gate/11.mp4"},
+    {type:"video",src:"./ảnh, video/Quảng Ninh Gate/14.mp4"},
+    {type:"video",src:"./ảnh, video/Quảng Ninh Gate/15.mp4"},
+    {type:"video",src:"./ảnh, video/Quảng Ninh Gate/18.mp4"},
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/1.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/2.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/3.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/4.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/5.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/6.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/7.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/8.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/9.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/10.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/12.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/13.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/16.jpg"},
+    {type:"img",src:"./ảnh, video/Quảng Ninh Gate/17.jpg"}
+],
+
+denTho:[
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/1.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/2.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/3.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/4.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/5.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/6.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/7.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/8.jpg"},
+    {type:"img",src:"./ảnh, video/Đền thờ C.V.An/9.jpg"}
+],
+
+daiHoi:[
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/1.jpg"},
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/2.jpg"},
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/3.jpg"},
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/4.jpg"},
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/5.jpg"},
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/6.jpg"},
+    {type:"img",src:"./ảnh, video/Đại hội chi đội/7.jpg"}
+],
+
+october20:[
+    {type:"video",src:"./ảnh, video/20-10/1.mp4"},
+    {type:"video",src:"./ảnh, video/20-10/2.mp4"},
+    {type:"video",src:"./ảnh, video/20-10/3.mp4"}
+],
+
+november20:[
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/20-11/4.jpg"},
+
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/20-11/1.mp4"},
+    {type:"video",src:"./ảnh, video/20-11/2.mp4"},
+    {type:"video",src:"./ảnh, video/20-11/3.mp4"}
+],
+
+noel:[
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/Noel/4.mp4"},
+    {type:"video",src:"./ảnh, video/Noel/3.mp4"},
+    {type:"video",src:"./ảnh, video/Noel/2.mp4"},
+    {type:"video",src:"./ảnh, video/Noel/1.mp4"},
+
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/Noel/5.jpg"},
+    {type:"img",src:"./ảnh, video/Noel/6.jpg"},
+    {type:"img",src:"./ảnh, video/Noel/7.jpg"},
+    {type:"img",src:"./ảnh, video/Noel/8.jpg"}
+],
+
+hocKi1:[
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/End HKI/3.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/4.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/5.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/6.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/7.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/8.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/9.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/10.jpg"},
+    {type:"img",src:"./ảnh, video/End HKI/11.jpg"},
+
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/End HKI/1.mp4"},
+    {type:"video",src:"./ảnh, video/End HKI/2.mp4"}
+],
+
+tet:[
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/Tết/1.mp4"},
+    {type:"video",src:"./ảnh, video/Tết/2.mp4"},
+    {type:"video",src:"./ảnh, video/Tết/3.mp4"},
+    {type:"video",src:"./ảnh, video/Tết/4.mp4"},
+    {type:"video",src:"./ảnh, video/Tết/6.mp4"},
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/Tết/9.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/10.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/11.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/12.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/13.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/14.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/15.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/16.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/17.jpg"},
+    {type:"img",src:"./ảnh, video/Tết/18.jpg"}
+],
+
+theThao:[
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/thể thao/1.mp4"},
+    {type:"video",src:"./ảnh, video/thể thao/2.mp4"},
+    {type:"video",src:"./ảnh, video/thể thao/3.mp4"},
+    {type:"video",src:"./ảnh, video/thể thao/4.mp4"},
+    {type:"video",src:"./ảnh, video/thể thao/5.mp4"},
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/thể thao/6.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/7.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/8.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/9.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/10.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/11.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/12.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/13.jpg"},
+    {type:"img",src:"./ảnh, video/thể thao/15.jpg"}
+],
+
+langVanHoa:[
+    {type:"img",src:"./ảnh, video/54 dân tộc/1.jpg"},
+    {type:"img",src:"./ảnh, video/54 dân tộc/2.jpg"},
+    {type:"img",src:"./ảnh, video/54 dân tộc/3.jpg"},
+    {type:"img",src:"./ảnh, video/54 dân tộc/4.jpg"}
+],
+
+khoangXanh:[
+    // 📸 ẢNH
+    {type:"img",src:"./ảnh, video/Khoang Xanh/9.jpg"},
+    {type:"img",src:"./ảnh, video/Khoang Xanh/10.jpg"},
+    {type:"img",src:"./ảnh, video/Khoang Xanh/11.jpg"},
+    {type:"img",src:"./ảnh, video/Khoang Xanh/12.jpg"},
+    {type:"img",src:"./ảnh, video/Khoang Xanh/13.jpg"},
+    {type:"img",src:"./ảnh, video/Khoang Xanh/14.jpg"},
+    // 🎥 VIDEO
+    {type:"video",src:"./ảnh, video/Khoang Xanh/1.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/2.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/3.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/4.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/5.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/6.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/7.mp4"},
+    {type:"video",src:"./ảnh, video/Khoang Xanh/8.mp4"}
+],
+
+vanNghe:[
+    {type:"img",src:"./ảnh, video/Văn nghệ/3.jpg"},
+    {type:"img",src:"./ảnh, video/Văn nghệ/2.jpg"},
+    {type:"video",src:"./ảnh, video/Văn nghệ/1.mp4"}
+],
+
+cuoiNamHoc:[
+    {type:"img",src:"./ảnh, video/cuối năm học/1.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/2.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/3.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/4.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/5.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/6.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/7.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/8.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/9.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/10.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/11.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/12.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/13.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/14.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/15.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/16.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/17.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/18.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/19.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/20.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/21.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/22.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/23.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/24.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/25.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/26.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/27.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/28.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/29.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/30.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/31.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/32.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/33.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/34.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/35.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/36.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/37.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/38.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/39.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/40.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/41.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/42.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/43.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/44.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/45.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/46.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/47.jpg"},
+    {type:"img",src:"./ảnh, video/cuối năm học/48.jpg"},
+],
+};
+
+/* 📌 INDEX */
+const currentIndex = {
+dauNamHoc:0,
+
+gate:0,
+denTho:0,
+daiHoi:0,
+october20:0,
+november20:0,
+noel:0,
+
+hocKi1:0,
+tet:0,
+theThao:0,
+
+langVanHoa:0,
+khoangXanh:0,
+vanNghe:0,
+
+cuoiNamHoc:0,
+};
+
+/* 🔄 UPDATE */
+function updateMedia(id){
+
+const frame=document.querySelector(`#${id} .media-frame`);
+
+const item=galleries[id][currentIndex[id]];
+
+if(item.type==="img"){
+
+frame.innerHTML=`
+<img src="${item.src}">
+`;
+
+}else{
+
+frame.innerHTML=`
+<video controls autoplay>
+<source src="${item.src}" type="video/mp4">
+</video>
+`;
+
+}
+
+}
+
+/* ➡️ NEXT */
+function nextMedia(id){
+
+currentIndex[id]++;
+
+if(currentIndex[id]>=galleries[id].length){
+
+currentIndex[id]=0;
+
+}
+
+updateMedia(id);
+
+}
+
+/* ⬅️ PREV */
+function prevMedia(id){
+
+currentIndex[id]--;
+
+if(currentIndex[id]<0){
+
+currentIndex[id]=galleries[id].length-1;
+
+}
+
+updateMedia(id);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tô Minh Khoa 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', cursive;
+    background: linear-gradient(135deg,#fdfbfb,#ebedee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 📦 khung chính */
+.card {
+    width: 700px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 0.8s ease;
+}
+
+/* ✨ tiêu đề */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00c167;
+}
+
+/* 📜 nội dung */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+    transition: 0.2s;
+}
+
+/* 👱🏾 dấu chấm xinh */
+li::before {
+    content: "👱🏾";
+    position: absolute;
+    left: 0;
+}
+
+/* ❌ BỎ ĐỔI MÀU — chỉ giữ dịch nhẹ */
+li:hover {
+    transform: translateX(5px);
+}
+
+/* 🌈 NÚT BACK */
+.back-btn{
+
+    position:fixed;
+
+    bottom:14px;
+    right:14px;
+
+    padding:8px 16px;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    background:linear-gradient(
+        135deg,
+        #ff5fa2,
+        #ff9966,
+        #ffe066,
+        #72ff7e,
+        #6edbff,
+        #7a7dff,
+        #d96eff,
+        #ff5fa2
+    );
+
+    background-size:400% 400%;
+
+    animation:rainbowMove 8s ease infinite;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.25);
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 25px rgba(255,120,220,0.5);
+}
+
+@keyframes rainbowMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Tô Minh Khoa (3/4)</h1>
+
+    <ul>
+        <li>Đặc điểm nhận dạng: đen, cao</li>
+        <li>Sở trường: calistenic</li>
+        <li>Hoạt động yêu thích: tập</li>
+        <li>Biệt danh muốn có: Anh Da Đen</li>
+        <li>Phim yêu thích: ko có</li>
+        <li>Bạn thân: Vũ, San, Đăng khôi, Xuân Vinh, Vũ Khôi Nguyên</li>
+        <li>Bạn ghét: không có</li>
+        <li>Thứ/điều quý nhất: gia đình</li>
+        <li>Môn học yêu thích: GDTC</li>
+        <li>Góc nhìn về thầy cô và bạn bè: bạn bè là bạn, thầy cô là thầy cô</li>
+        <li>Cảm thấy tốt về những thành tích lớp đạt được</li>
+        <li>Nếu đc quay về quá khứ, mình sẽ quay về để gặp lại lớp, trải nghiệm lại những kỉ niệm đẹp của lớp</li>
+        <li>Game yêu thích: Roblox</li>
+        <li>Lời chúc cuối cùng: Chúc lớp vạn sự bình an, sức khoẻ dồi dào</li>
+    </ul>
+</div>
+
+<button class="back-btn" onclick="goBack()">⬅ Trang chủ</button>
+
+<audio id="bgMusic" autoplay loop>
+<source src="./Nhạc/Em Là Hoàng Hôn.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function goBack(){
+    window.location.href = "home2.html";
+}
+
+/* 🎵 Nhạc */
+window.addEventListener("DOMContentLoaded",function(){
+
+const music=document.getElementById("bgMusic");
+music.volume=0.25;
+
+const playPromise=music.play();
+
+if(playPromise!==undefined){
+playPromise.catch(()=>{
+document.addEventListener("click",function(){
+music.play();
+},{once:true});
+});
+}
+
+});
+
+</script>
+
+</body>
+</html>

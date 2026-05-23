@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Sơ đồ lớp 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url("https://i.pinimg.com/originals/30/34/39/3034395f2d0de3ac97ee12981302f813.jpg") no-repeat center/cover;
+}
+
+/* 🌈 NÚT BACK */
+.back-btn{
+
+    position:fixed;
+
+    bottom:14px;
+    right:14px;
+
+    padding:8px 16px;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    background:linear-gradient(
+        135deg,
+        #ff5fa2,
+        #ff9966,
+        #ffe066,
+        #72ff7e,
+        #6edbff,
+        #7a7dff,
+        #d96eff,
+        #ff5fa2
+    );
+
+    background-size:400% 400%;
+
+    animation:rainbowMove 8s ease infinite;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.25);
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 25px rgba(255,120,220,0.5);
+}
+
+@keyframes rainbowMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* 👩‍🏫 GVCN */
+.teacher {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.teacher button {
+    padding: 20px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    transition: 1s;
+}
+
+.teacher button:hover {
+    transform: scale(1.05);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    color: rgb(55, 55, 55);
+}
+
+/* 🏫 sơ đồ */
+.classroom {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 120px;
+    transform: scale(1.05);
+}
+
+/* 🧱 block */
+.block {
+    display: grid;
+    grid-template-columns: repeat(3, 130px);
+}
+
+/* 🪑 ô */
+.cell {
+    border: 1px solid rgba(255,255,255,0.7);
+    padding: 10px;
+    min-height: 75px;
+
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+}
+
+/* 🔘 CHỈ áp dụng cho nút trong cell */
+.cell button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    transition: 1s;
+}
+
+.cell button:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;    
+    color: rgb(55, 55, 55);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌈 NÚT BACK -->
+<button class="back-btn" onclick="goHome()">⬅ Trang chủ</button>
+
+<div class="teacher">
+    <button onclick="goPage('NguyenThuHa')">GVCN: Nguyễn Thu Hà</button>
+</div>
+
+<div class="classroom">
+
+<!-- KHỐI 1 -->
+<div class="block">
+<div class="cell"><button style="background:#e2b7ff" onclick="goPage('TrinhBaoHan')">Trịnh Bảo Hân</button></div>
+<div class="cell"><button style="background:#ffffff" onclick="goPage('LeMinhKhoi')">Lê Minh Khôi</button></div>
+<div class="cell"><button style="background:#87ddff" onclick="goPage('DuongBaoNgoc')">Dương Bảo Ngọc</button></div>
+
+<div class="cell"><button style="background:#7cf164" onclick="goPage('VuKhoiNguyen')">Vũ Khôi Nguyên</button></div>
+<div class="cell"><button style="background:#86f5ff" onclick="goPage('DangThiThaoNhi')">Đặng Thị Thảo Nhi</button></div>
+<div class="cell"><button style="background:#7dafff" onclick="goPage('LaiDucNghia')">Lại Đức Nghĩa</button></div>
+
+<div class="cell"><button style="background:#778efc" onclick="goPage('NguyenDucAnh')">Nguyễn Đức Anh</button></div>
+<div class="cell"><button style="background:#f878f8" onclick="goPage('NguyenDieuMinh')">Nguyễn Diệu Minh</button></div>
+<div class="cell"><button style="background:#9a52ff" onclick="goPage('NguyenMinhThai')">Nguyễn Minh Thái</button></div>
+
+<div class="cell"><button style="background:#758cff" onclick="goPage('NguyenThanhAn')">Nguyễn Thành An</button></div>
+<div class="cell"><button style="background:#5f7cff" onclick="goPage('NguyenHuongGiang')">Nguyễn Hương Giang</button></div>
+<div class="cell"><button style="background:#39ffd1" onclick="goPage('NguyenBinhMinh')">Nguyễn Bình Minh</button></div>
+
+<div class="cell"><button style="background:#ff7ee9" onclick="goPage('NguyenLeMinhAnh')">Nguyễn Lê Minh Anh</button></div>
+<div class="cell"><button style="background:#36eeff" onclick="goPage('TranNgocKhoiNguyen')">Trần Ngọc Khôi Nguyên</button></div>
+<div class="cell"></div>
+</div>
+
+<!-- KHỐI 2 -->
+<div class="block">
+<div class="cell"><button style="background:#2ae400" onclick="goPage('PhamVuKhoi')">Phạm Vũ Khôi</button></div>
+<div class="cell"><button style="background:#73bbff" onclick="goPage('MaiHoaiAn')">Mai Hoài An</button></div>
+<div class="cell"><button style="background:#1deb40" onclick="goPage('LuuTienQuocKhanh')">Lưu Tiến Quốc Khánh</button></div>
+
+<div class="cell"><button style="background:#ffb464" onclick="goPage('NguyenDanhTien')">Nguyễn Danh Tiến</button></div>
+<div class="cell"><button style="background:#ffa6cf" onclick="goPage('BuiLinhDan')">Bùi Linh Đan</button></div>
+<div class="cell"><button style="background:#b68995" onclick="goPage('BuiDucDung')">Bùi Đức Dũng</button></div>
+
+<div class="cell"><button style="background:#ff95cd" onclick="goPage('HaDucAnh')">Hà Đức Anh</button></div>
+<div class="cell"><button style="background:#72ff82" onclick="goPage('TrinhBaoNgoc')">Trịnh Bảo Ngọc</button></div>
+<div class="cell"><button style="background:#5fff6a" onclick="goPage('NguyenDucAn')">Nguyễn Đức An</button></div>
+
+<div class="cell"><button style="background:#ff8ac1" onclick="goPage('LeThuyDuong')">Lê Thùy Dương</button></div>
+<div class="cell"><button style="background:#a2d2ff" onclick="goPage('DinhBaoAnh')">Đinh Bảo Anh</button></div>
+<div class="cell"><button style="background:#ff2a2a" onclick="goPage('DamTrongVu')">Đàm Trọng Vũ</button></div>
+
+<div class="cell"><button style="background:#85ffb6" onclick="goPage('ToMinhKhoa')">Tô Minh Khoa</button></div>
+<div class="cell"><button style="background:#ffd6a5" onclick="goPage('NguyenLinhSan')">Nguyễn Linh San</button></div>
+<div class="cell"><button style="background:#ff7272" onclick="goPage('PhamXuanVinh')">Phạm Xuân Vinh</button></div>
+</div>
+
+<!-- KHỐI 3 -->
+<div class="block">
+<div class="cell"><button style="background:#ff8f2d" onclick="goPage('LeQuangAnh')">Lê Quang Anh</button></div>
+<div class="cell"><button style="background:#ff80db" onclick="goPage('NguyenNguyenMy')">Nguyễn Nguyên My</button></div>
+<div class="cell"><button style="background:#fffa61" onclick="goPage('LeMinh')">Lê Minh</button></div>
+
+<div class="cell"><button style="background:#52b1ff" onclick="goPage('BachDangThanh')">Bạch Đăng Thành</button></div>
+<div class="cell"><button style="background:#d997ff" onclick="goPage('LeQuynhAnh')">Lê Quỳnh Anh</button></div>
+<div class="cell"><button style="background:#76ff6c" onclick="goPage('BuiDangKhoi')">Bùi Đăng Khôi</button></div>
+
+<div class="cell"><button style="background:#f95353" onclick="goPage('NguyenHoangTung')">Nguyễn Hoàng Tùng</button></div>
+<div class="cell"><button style="background:#ffffff" onclick="goPage('MaiThanhHuyen')">Mai Thanh Huyền</button></div>
+<div class="cell"><button style="background:#6b77f7" onclick="goPage('HoangMinhTung')">Hoàng Minh Tùng</button></div>
+
+<div class="cell"><button style="background:#9dff89" onclick="goPage('NguyenMinhToan')">Nguyễn Minh Toàn</button></div>
+<div class="cell"><button style="background:#fbff84" onclick="goPage('TranHuyenTramAnh')">Trần Huyền Trâm Anh</button></div>
+<div class="cell"><button style="background:#ffb151" onclick="goPage('NguyenQuangMinh')">Nguyễn Quang Minh</button></div>
+
+<div class="cell"><button style="background:#19db5d" onclick="goPage('DoNgocTraMy')">Đỗ Ngọc Trà My</button></div>
+<div class="cell"><button style="background:#e4ff38" onclick="goPage('PhamVuVinh')">Phạm Vũ Vinh</button></div>
+<div class="cell"></div>
+</div>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>s
+<source src="./Nhạc/có hẹn với thanh xuân.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function goPage(name){
+    window.location.href = name + ".html";
+}
+
+function goHome(){
+    window.location.href = "index.html";
+}
+
+/* 🎵 Nhạc */
+window.addEventListener("DOMContentLoaded",function(){
+
+const music=document.getElementById("bgMusic");
+music.volume=0.25;
+
+const playPromise=music.play();
+
+if(playPromise!==undefined){
+playPromise.catch(()=>{
+document.addEventListener("click",function(){
+music.play();
+},{once:true});
+});
+}
+
+});
+
+</script>
+
+</body>
+</html>
